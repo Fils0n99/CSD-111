@@ -1,0 +1,45 @@
+<html>
+    <head>
+<!---It's the last time i need to do this It's late I'm tired I have a Final Tomarrow and my is names Daniel Filson. Let's do this!-->
+        <title>:Project B8</title>
+        <script>    //This function is for the discovery of the number of greatest occurance
+           function countOccurences(numArray, num) 
+            {
+            // Set the deafault count to 0
+            var found = 0;
+            // Create for loop to sort through the array and find the selected number.
+            for (var index = 0; index < numArray.length; index++) {
+                if (numArray[index] == num) 
+                {
+                    // This adds to the counter if the number is found.
+                    found++;
+                }
+            }
+            // Returns the number of times the selected number is counted.
+           return parseInt(found);
+        }
+
+        </script>
+    </head>
+    <body>
+        <h3>Ode to programing</h3>
+        <script>
+            
+        // Create the array.
+        var numbers = [7, 42, 8, 7, 42, 7, 6, 7, 9, 42, 25, 85, 12];
+        // Set the number to find.
+        var numberToFind = 7;
+        // Displays the first part of the message and the number to find.
+        document.write("The number of occurrences of " + numberToFind + " in [");
+        // For loop to write out the array.
+        for (i = 0; i < numbers.length; i++) {
+            document.write(numbers[i]);
+            if (i != numbers.length - 1) document.write(",");
+        }
+        document.write("] is ");
+        // Call the function.
+        document.write(countOccurences(numbers, numberToFind));
+
+        </script>
+    </body>
+</html>

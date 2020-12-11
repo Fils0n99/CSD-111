@@ -1,0 +1,91 @@
+<html>
+    <head>
+<!---Daniel Filson here...Have never done arrays before so here's hoping things work-->
+        <title>Project 8A</title>
+               
+    </head>
+    <body>
+        <h3>Numbers are as stated</h3>
+        <script>
+    //Okay this one is going to be very hacked together from code I made and used in the past.
+             /*Okay let's begin*/  
+        var Another0ne = "Yes";
+        //Here is the array 
+        var numbers = new Array();
+        //initialize a counter to track the array element
+        var counter = 0;
+        //Create a loop to allow the user to enter multiple numbers
+        while (Another0ne.slice(0, 1).toLowerCase() != "n") 
+        {
+            // prompt the user for a number.
+            var number = prompt("Please enter a positive or negative whole number.");           //Why did this take almost 3 hours to figuire out?
+            //Add the number to the array
+            numbers[counter] = number;
+            //increment the array counter
+            counter++;
+            //ask them if they want to add another number
+            Another0ne = prompt("Do you want to add another number?(Yes/No)");
+        }
+//Really wish i found out how to do this before 7:30 
+//set up arrays to store the positive and negative values separately.
+var positiveNumbers = new Array();
+        var negativeNumbers = new Array();
+
+        //loop through the array and separate all positive and negative numbers.                    //Now my brother and I do work on these together...projects are easier with help and feedback.
+        for (i = 0; i < numbers.length; i++) {
+            // indexes the numbers with the array
+            var number = numbers[i];
+            // This if statement is to sort the positive numbers.
+            if (number > 0) {
+                positiveNumbers[positiveNumbers.length] = number;
+            }
+            // This else if statement is to sort out the negative numbers.
+            else if (number < 0) {
+                negativeNumbers[negativeNumbers.length] = number;
+            }
+        }
+                // This sets up the total values of positive and negative numbers to be added and totaled up.
+                var positiveTotal = 0;
+        var negativeTotal = 0;
+
+        //This for loop displays the negative values of the array.
+        document.write("You entered the following negative integers:");             ///This took so much longer to  make than i expected
+        for (i = 0; i < negativeNumbers.length; i++) {
+            document.write(" " + negativeNumbers[i]);
+            if (i != negativeNumbers.length - 1) {
+                document.write(",");
+            }
+            else {
+                document.write("<br>")
+            }
+            // This adds up the negative values and displays the total.
+            negativeTotal = parseInt(negativeTotal) + parseInt(negativeNumbers[i]);
+        }
+        document.write("The sum of all negative integers is: " + negativeTotal);
+
+        // This for loop displays the positive values in the array.
+        document.write("<br>You entered the following positive integers: ");
+        for (i = 0; i < positiveNumbers.length; i++) {
+            document.write(" " + positiveNumbers[i]);
+            if (i != positiveNumbers.length - 1) {
+                document.write(",");
+            }                                                                           ///Had my father help to tidey things up at the end here.
+            else {
+                document.write("<br>")
+            }
+            positiveTotal = parseInt(positiveTotal) + parseInt(positiveNumbers[i]);
+        }
+        // This adds up the positive values and displays the total
+        document.write("The sum of all positive integers is: " + positiveTotal);
+        </script>
+    </body>
+</html>
+<!-- Design and implement a program that asks the user to enter arbitrary number of positive and negative integers.
+Each time the user enters an integer the program asks whether the user wants to enter one more. Store the integers in the array.
+Use a loop to output all the integers stored in array in two groups: first output all negative integers and their sum, then output all positive integers and their sum.
+Do not output 0 even if it is present in the array.
+See sample output below:
+You entered the following negative integers: -4, -7, -1
+The sum of all negative integers is: -12
+You entered the following positive integers: 1, 10, 3, 5
+The sum of all positive integers is: 19 -->
